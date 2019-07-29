@@ -1,0 +1,7 @@
+index_route:
+    path: /
+    defaults : {_controller: 'App\Http\IndexController::index'}
+
+page_route:
+    path :  /page/{alias}
+    defaults : {_controller: 'App\Http\PageController::show'}
