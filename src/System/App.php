@@ -27,8 +27,11 @@ class App
     private $controller;
     private $arguments;
     private $basePath;
+    private $container = [];
     public static $instance = null;
-
+    /**
+     * @return App
+     */
     public static function getInstance($basePath = null)
     {
         if(is_null(static::$instance)){
@@ -101,5 +104,18 @@ class App
     private function getArguments()
     {
         return (new ArgumentResolver())->getArguments($this->request, $this->controller);
+    }
+
+    public function add($name, $object)
+    {
+        $this->container[$name] = $object;
+    }
+
+    public function get($name)
+    {
+        if(!isset($this->container[$name])){
+            return null;
+        }
+        return $this->container[$name];
     }
 }

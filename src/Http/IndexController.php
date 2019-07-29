@@ -9,6 +9,6 @@ class IndexController extends Controller
 
     public function index()
     {
-        return $this->render("index/index", ["title" => "Test index page!"]);
+        return $this->render("index/index", ["dbuser" => app()->get('config')->get('database.user')]);
     }
 }

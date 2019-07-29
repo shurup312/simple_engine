@@ -1,3 +1,2 @@
-<h4>Index page</h4>
-<?=$title;?>
+Current configured db user : <?=$dbuser;?>
 
