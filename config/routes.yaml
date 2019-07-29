@@ -3,5 +3,5 @@ index_route:
     defaults : {_controller: 'App\Http\IndexController::index'}
 
 page_route:
-    path :  /page/{alias}
+    path : /page/{alias}
     defaults : {_controller: 'App\Http\PageController::show'}
